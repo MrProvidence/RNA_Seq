@@ -17,13 +17,30 @@ The results are not intended to reproduce the original paper exactly, but to dem
 
 The workflow covers:
 
-* Import of gene‑level count data
+* Import of gene-level count data
 * Differential expression analysis with **DESeq2**
 * Exploratory data analysis (PCA, heatmaps)
 * Visualization of biologically relevant gene sets
 * Gene Ontology (GO) enrichment analysis
 
-Upstream processing steps (read QC, alignment, and gene‑level quantification) were performed prior to this analysis using **Galaxy**. This repository focuses on the **downstream statistical and exploratory analysis in R**.
+Upstream processing steps (read QC, alignment, and gene-level quantification) were performed prior to this analysis using **Galaxy**. This repository focuses on the **downstream statistical and exploratory analysis in R**.
+
+---
+
+## Upstream Galaxy workflow (details)
+
+The upstream RNA-seq processing was carried out in **Galaxy** using a standard, transparent pipeline. The included Galaxy workflow export (`.ga`) documents the exact tools and connections. In brief, the workflow comprised:
+
+* **Quality control of raw reads**: *Falco* (FastQC-compatible summaries)
+* **Adapter and quality trimming**: *Trim Galore*
+* **Reference preparation / annotation handling**: *gffread*
+* **Read alignment**: *HISAT2* against the *Arabidopsis thaliana* reference genome
+* **Post-alignment processing**: *samtools* (sorting) and alignment statistics (*flagstat*)
+* **Alignment-level QC**: *Qualimap BAM QC*
+* **Gene-level quantification**: *featureCounts* to produce count tables used downstream
+* **Aggregate QC reporting**: *MultiQC*
+
+Only the resulting **gene-level count matrices** and sample metadata are used for downstream analysis in R.
 
 ---
 
@@ -85,11 +102,11 @@ Only genes with minimal expression are retained, and standard multiple‑testing
 
 This project was undertaken to:
 
-* Strengthen practical skills in RNA‑seq data analysis
+* Strengthen practical skills in RNA-seq data analysis
 * Gain familiarity with real, complex experimental designs
-* Practice producing publication‑quality figures in R
+* Practice producing publication-quality figures in R
 
-It also serves as a compact example of my ability to work with transcriptomic data in a reproducible research setting.
+This repository is intended to demonstrate **analytical workflow competence rather than biological discovery**.
 
 ---
 
