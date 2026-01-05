@@ -1,0 +1,13 @@
+sample	treatment	temperature
+DC3000_23_1	DC3000	23
+DC3000_23_2	DC3000	23
+DC3000_23_3	DC3000	23
+DC3000_30_1	DC3000	30
+DC3000_30_2	DC3000	30
+DC3000_30_3	DC3000	30
+mock_23_1	mock	23
+mock_23_2	mock	23
+mock_23_3	mock	23
+mock_30_1	mock	30
+mock_30_2	mock	30
+mock_30_3	mock	30
