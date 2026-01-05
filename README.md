@@ -62,7 +62,19 @@ The design is intentionally kept simple to highlight core DESeq2 usage rather th
 
 ## Repository Structure
 
+The repository is organised as follows:
+
+```text
+├── Plots_Generated/            # All generated figures
+├── featureCounts_collection/   # Gene-level count files (input)
+├── Galaxy-Workflow-Workflow_constructed_from_history__RNA-seq_Analysis_.ga  # Galaxy upstream workflow
+├── RNA_Seq.R                   # Main downstream DESeq2 analysis script
+├── RNA_Seq.Rproj               # RStudio project file
+├── tabularmeta.txt             # Sample metadata
+├── .gitignore
+└── README.md
 ```
+
 ├── featureCounts_collection/   # Gene-level count files (input)
 ├── tabularmeta.txt             # Sample metadata
 ├── Plots_Generated/            # All generated figures
@@ -75,8 +87,8 @@ The design is intentionally kept simple to highlight core DESeq2 usage rather th
 ├── RNA_Seq.Rproj               # RStudio project file
 ├── .gitignore
 └── README.md
-```
 
+```
 ├── featureCounts_collection/   # Gene-level count files (input)
 ├── tabularmeta.txt             # Sample metadata
 ├── Plots_Generated/            # All generated figures
@@ -86,7 +98,6 @@ The design is intentionally kept simple to highlight core DESeq2 usage rather th
 │   └── GO/
 ├── RNAseq_DESeq2_analysis.R    # Main analysis script
 └── README.md
-
 ```
 
 All figures are automatically written to disk to ensure full reproducibility.
@@ -95,11 +106,11 @@ All figures are automatically written to disk to ensure full reproducibility.
 
 ## Key Methods
 
-- **Differential expression**: DESeq2
-- **Normalization / transformation**: Variance stabilizing transformation (VST)
-- **Visualization**: ggplot2, pheatmap
-- **Annotation**: org.At.tair.db (Arabidopsis thaliana)
-- **Functional enrichment**: clusterProfiler (GO Biological Process)
+* **Differential expression**: DESeq2
+* **Normalization / transformation**: Variance stabilizing transformation (VST)
+* **Visualization**: ggplot2, pheatmap
+* **Annotation**: org.At.tair.db (Arabidopsis thaliana)
+* **Functional enrichment**: clusterProfiler (GO Biological Process)
 
 Only genes with minimal expression are retained, and standard multiple‑testing correction is applied.
 
@@ -107,18 +118,19 @@ Only genes with minimal expression are retained, and standard multiple‑testing
 
 ## Notes on Interpretation
 
-- This analysis is a *reanalysis* and *learning exercise*, not a formal reproduction study.
-- Some parameter choices (e.g. thresholds, contrasts) may differ from those in the original publication.
-- Biological conclusions should be interpreted cautiously and in the context of the original study.
+* This analysis is a *reanalysis* and *learning exercise*, not a formal reproduction study.
+* Some parameter choices (e.g. thresholds, contrasts) may differ from those in the original publication.
+* Biological conclusions should be interpreted cautiously and in the context of the original study.
 
 ---
 
 ## Motivation
 
 This project was undertaken to:
-- Strengthen practical skills in RNA-seq data analysis
-- Gain familiarity with real, complex experimental designs
-- Practice producing publication-quality figures in R
+
+* Strengthen practical skills in RNA-seq data analysis
+* Gain familiarity with real, complex experimental designs
+* Practice producing publication-quality figures in R
 
 This repository is intended to demonstrate **analytical workflow competence rather than biological discovery**.
 
@@ -127,10 +139,11 @@ This repository is intended to demonstrate **analytical workflow competence rath
 ## Software Environment
 
 Analysis performed in **R** using Bioconductor packages, including:
-- DESeq2
-- clusterProfiler
-- AnnotationDbi
-- tidyverse
+
+* DESeq2
+* clusterProfiler
+* AnnotationDbi
+* tidyverse
 
 Exact versions may vary; the script is intended to be readable and adaptable.
 
@@ -150,5 +163,3 @@ All credit for experimental design, data generation, and primary biological insi
 Kim et al., Nature (2022).
 
 This repository contains only independent downstream analysis code.
-
-```
